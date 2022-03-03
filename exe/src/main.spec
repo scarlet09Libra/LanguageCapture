@@ -1,0 +1,56 @@
+# -*- mode: python ; coding: utf-8 -*-
+
+
+block_cipher = None
+
+
+a = Analysis(['main.py'],
+             pathex=[],
+             binaries=[],
+             datas=[],
+             hiddenimports=[],
+             hookspath=[],
+             hooksconfig={},
+             runtime_hooks=[],
+             excludes=['PyQt5', 'pandas', 'beautifulsoup4', 'keras', 'mecab-python3', 'neologdn', 'nltk', 'pip',
+             'polyglot', 'py2app', 'pyinstaller', 'PyQt5-Qt5', 'PyQt5-sip', 'QtPy', 'jedi', 'Jinja2',
+             'tensorflow', 'tensorflow-estimator', 'absl-py', 'altgraph', 'appnope', 'argon2-cffi', 'jsonschema',
+             'astunparse', 'attrs', 'backcall', 'bleach', 'cachetools', 'certifi', 'cffi', 'charset-normalizer',
+             'clang', 'click', 'cycler', 'debugpy', 'decorator', 'defusedxml', 'entrypoints', 'flatbuffers',
+             'gast', 'google-auth', 'google-auth-oauthlib', 'google-pasta', 'grpcio', 'h5py', 'idna', 'ipykernel',
+             'ipython', 'ipython-genutils', 'ipywidgets', 'jupyter', 'jupyter-client', 'jupyter-console', 'jupyter-core',
+             'jupyterlab-pygments', 'jupyterlab-widgets', 'Keras-Preprocessing', 'kiwisolver', 'macholib',
+             'Markdown', 'MarkupSafe', 'matplotlib', 'matplotlib-inline', 'mistune', 'modulegraph', 'nbclient',
+             'nbconvert', 'nbformat', 'nest-asyncio', 'notebook', 'oauthlib', 'opt-einsum', 'packaging', 'pandocfilters',
+             'parso', 'pexpect', 'pickleshare', 'Pillow', 'prometheus-client', 'prompt-toolkit', 'protobuf', 'ptyprocess',
+             'pyasn1', 'pyasn1-modules', 'pybind11', 'pycparser', 'Pygments', 'pyinstaller-hooks-contrib', 'pyparsing',
+             'pyrsistent', 'python-dateutil', 'pytz', 'pyzmq', 'qtconsole', 'QtPy', 'regex', 'requests', 'requests-oauthlib',
+             'rsa', 'Send2Trash', 'setuptools', 'sip', 'six', 'soupsieve', 'tensorboard', 'tensorboard-data-server',
+             'tensorboard-plugin-wit', 'termcolor', 'terminado', 'testpath', 'threadpoolctl', 'toml', 'tornado',
+             'tqdm', 'traitlets', 'typing-extensions', 'urllib3', 'wcwidth', 'webencodings', 'Werkzeug', 'wheel',
+             'widgetsnbextension', 'wrapt', 'scikit-learn'],
+             win_no_prefer_redirects=False,
+             win_private_assemblies=False,
+             cipher=block_cipher,
+             noarchive=False)
+pyz = PYZ(a.pure, a.zipped_data,
+             cipher=block_cipher)
+
+exe = EXE(pyz,
+          a.scripts,
+          a.binaries,
+          a.zipfiles,
+          a.datas,  
+          [],
+          name='main',
+          debug=False,
+          bootloader_ignore_signals=False,
+          strip=False,
+          upx=True,
+          upx_exclude=[],
+          runtime_tmpdir=None,
+          console=True,
+          disable_windowed_traceback=False,
+          target_arch=None,
+          codesign_identity=None,
+          entitlements_file=None )
